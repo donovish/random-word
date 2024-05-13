@@ -1,62 +1,35 @@
-body {
+.card-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    min-height: 100vh; /* Changed from height to min-height */
   }
   
-  #container {
-    text-align: center;
+  .card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
   }
   
-  #randomizeBtn {
-    font-size: 18px;
-    padding: 10px 20px;
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0px 5px 15px 5px #0000002b;
+    border-radius: 20px;
   }
   
-  .word {
-    font-size: 48px;
-    font-weight: bold;
-    animation: zoomInOut 2s infinite;
+  .card-back {
+    transform: rotateY(180deg);
   }
   
-  @keyframes zoomInOut {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  #randomizeBtn {
-    animation: breathe 2s ease-in-out infinite alternate;
+  .card.flipped {
+    transform: rotateY(180deg);
   }
   
-  @keyframes breathe {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-  
-  #randomizeBtn {
-    background-color: #3498db; /* Adjust background color as desired */
-    color: white;
-    font-size: 18px;
-    padding: 15px 30px;
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Add rounded corners */
-    cursor: pointer; /* Indicate clickable element */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    transition: all 0.2s ease-in-out; /* Smooth transition on hover */
-  }
-  
-  #randomizeBtn:hover {
-    background-color: #2980b9; /* Darker shade on hover */
-    transform: scale(1.02); /* Slight scale-up on hover */
+  .card-front img, .card-back img {
+    max-width: 100%;
+    height: auto;
   }
