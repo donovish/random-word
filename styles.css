@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  #container {
+    text-align: center;
+  }
+  
+  #randomizeBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  
+  .word {
+    font-size: 48px;
+    font-weight: bold;
+    animation: zoomInOut 2s infinite;
+  }
+  
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #randomizeBtn {
+    animation: breathe 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  #randomizeBtn {
+    background-color: #3498db; /* Adjust background color as desired */
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Indicate clickable element */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: all 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+  
+  #randomizeBtn:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+    transform: scale(1.02); /* Slight scale-up on hover */
+  }
